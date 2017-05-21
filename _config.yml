@@ -5,7 +5,7 @@
 # Site
 title: Payne Blog
 subtitle: 张攀
-description: 张攀，payne，个人博客，技术，生活 
+description: Talk is cheap, show me the code. 
 author: payne
 language: zh-Hans
 timezone: Asia/Shanghai
@@ -71,3 +71,10 @@ deploy:
   type: git
   repository: https://github.com/payne4handsome/payne4handsome.github.io
   branch: master
+
+
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000
