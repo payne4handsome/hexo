@@ -2,5 +2,5 @@
 hexo g -d
 
 git add .
-git commit
+git commit -m"wirite a blog"
 git push
