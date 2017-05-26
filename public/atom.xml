@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-05-24T05:26:00.000Z</updated>
+  <updated>2017-05-26T11:33:11.677Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,11 +16,42 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>SpingMvc学习笔记</title>
+    <link href="http://yoursite.com/2017/05/25/SpingMvc%E5%AD%A6%E4%B9%A0%E6%9D%82%E8%AE%B0/"/>
+    <id>http://yoursite.com/2017/05/25/SpingMvc学习杂记/</id>
+    <published>2017-05-25T09:17:08.000Z</published>
+    <updated>2017-05-26T11:33:11.677Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>本文主要记录一些比较的零散的东西</p>
+</blockquote>
+<ul>
+<li>一
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;servlet&gt;</div><div class="line">    &lt;servlet-name&gt;springMVC&lt;/servlet-name&gt;</div><div class="line">    &lt;servlet-class&gt;</div><div class="line">       org.springframework.web.servlet.DispatcherServlet</div><div class="line">    &lt;/servlet-class&gt;</div><div class="line">    &lt;init-param&gt;</div><div class="line">   	&lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;</div><div class="line">   	&lt;param-value&gt;classpath:springMVC-servlet.xml&lt;/param-value&gt;</div><div class="line">   &lt;/init-param&gt;</div><div class="line">   &lt;load-on-startup&gt;1&lt;/load-on-startup&gt;</div><div class="line"> &lt;/servlet&gt;</div></pre></td></tr></table></figure></li>
+</ul>
+<p>这里的classpath路径指的是EB-INF/classes的目录</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;本文主要记录一些比较的零散的东西&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;一
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>解决eclipse无法创建Web Module 3.0的问题</title>
     <link href="http://yoursite.com/2017/05/24/%E8%A7%A3%E5%86%B3eclipse%E6%97%A0%E6%B3%95%E5%88%9B%E5%BB%BAWeb-Module-3-0%E7%9A%84%E9%97%AE%E9%A2%98/"/>
     <id>http://yoursite.com/2017/05/24/解决eclipse无法创建Web-Module-3-0的问题/</id>
     <published>2017-05-24T05:12:02.000Z</published>
-    <updated>2017-05-24T05:26:00.000Z</updated>
+    <updated>2017-05-24T06:17:54.433Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>Eclipse 新建Maven工程选择maven-archetype-webapp新建dynamic web工程创建的工程版本比较低</p>
@@ -52,7 +83,7 @@
     <link href="http://yoursite.com/2017/05/21/linux-%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E7%AC%94%E8%AE%B0/"/>
     <id>http://yoursite.com/2017/05/21/linux-文件系统笔记/</id>
     <published>2017-05-21T08:14:57.000Z</published>
-    <updated>2017-05-23T06:22:36.000Z</updated>
+    <updated>2017-05-24T06:17:54.432Z</updated>
     
     <content type="html"><![CDATA[<h2>用户管理</h2>
 <pre><code>useradd wang#添加用户wang   会自动创建用户组
@@ -127,7 +158,7 @@ tail -l
     <link href="http://yoursite.com/2017/05/21/git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     <id>http://yoursite.com/2017/05/21/git学习笔记/</id>
     <published>2017-05-21T02:47:51.000Z</published>
-    <updated>2017-05-23T06:22:36.000Z</updated>
+    <updated>2017-05-24T06:17:54.431Z</updated>
     
     <content type="html"><![CDATA[<h2>首先配置自已的git</h2>
 <p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git config --global user.name &quot;John Doe&quot;</div><div class="line">$ git config --global user.email johndoe@example.com</div></pre></td></tr></table></figure></p>
@@ -168,7 +199,7 @@ tail -l
     <link href="http://yoursite.com/2017/05/20/hexo%E8%AE%BE%E7%BD%AE%E4%B8%BB%E9%A2%98%E3%80%81%E9%85%8D%E7%BD%AE/"/>
     <id>http://yoursite.com/2017/05/20/hexo设置主题、配置/</id>
     <published>2017-05-20T08:24:00.000Z</published>
-    <updated>2017-05-23T06:22:36.000Z</updated>
+    <updated>2017-05-24T06:17:54.428Z</updated>
     
     <content type="html"><![CDATA[<h2>Next主题只显示摘要</h2>
 <p>在首页，如果把每一篇文章的全部内容都显示出来的比较难看，所以可以配置让nexT主题只显示
@@ -206,7 +237,7 @@ true即可：&lt;/p&gt;
     <link href="http://yoursite.com/2017/05/20/markdown-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/"/>
     <id>http://yoursite.com/2017/05/20/markdown-基本语法/</id>
     <published>2017-05-20T07:00:45.000Z</published>
-    <updated>2017-05-23T06:22:36.000Z</updated>
+    <updated>2017-05-24T06:17:54.429Z</updated>
     
     <content type="html"><![CDATA[<p><strong>1、分段</strong> 	两个回车<br>
 <strong>2、换行</strong> 	两个空格 + 回车<br>
@@ -244,7 +275,7 @@ true即可：&lt;/p&gt;
     <link href="http://yoursite.com/2017/05/20/vim-%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
     <id>http://yoursite.com/2017/05/20/vim-常用快捷键/</id>
     <published>2017-05-20T06:17:13.000Z</published>
-    <updated>2017-05-23T06:22:36.000Z</updated>
+    <updated>2017-05-24T06:17:54.430Z</updated>
     
     <content type="html"><![CDATA[<h2>移动</h2>
 <ul>
@@ -312,7 +343,7 @@ true即可：&lt;/p&gt;
     <link href="http://yoursite.com/2017/04/27/Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"/>
     <id>http://yoursite.com/2017/04/27/Hexo搭建个人博客/</id>
     <published>2017-04-27T14:59:31.000Z</published>
-    <updated>2017-05-23T06:22:36.000Z</updated>
+    <updated>2017-05-24T06:17:54.385Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>第一次用Hexo搭建个人博客，原来用的CSDN的博客，但是嫌弃它不够简洁，有点花哨,
