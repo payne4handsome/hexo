@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2017/06/01/Redis-%E6%95%99%E7%A8%8B/</loc>
+    
+    <lastmod>2017-06-01T03:04:47.235Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2017/05/25/SpingMvc%E5%AD%A6%E4%B9%A0%E6%9D%82%E8%AE%B0/</loc>
     
-    <lastmod>2017-05-26T11:33:11.677Z</lastmod>
+    <lastmod>2017-05-27T09:14:37.457Z</lastmod>
     
   </url>
   

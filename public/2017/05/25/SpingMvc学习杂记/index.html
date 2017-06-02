@@ -96,7 +96,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/05/25/SpingMvc学习杂记/index.html">
 <meta property="og:site_name" content="Payne Blog">
 <meta property="og:description" content="本文主要记录一些比较的零散的东西   一 1234567891011&amp;lt;servlet&amp;gt;    &amp;lt;servlet-name&amp;gt;springMVC&amp;lt;/servlet-name&amp;gt;    &amp;lt;servlet-class&amp;gt;       org.springframework.web.servlet.DispatcherServlet    &amp;lt;/servle">
-<meta property="og:updated_time" content="2017-05-26T11:33:11.677Z">
+<meta property="og:updated_time" content="2017-05-27T09:14:37.457Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpingMvc学习笔记">
 <meta name="twitter:description" content="本文主要记录一些比较的零散的东西   一 1234567891011&amp;lt;servlet&amp;gt;    &amp;lt;servlet-name&amp;gt;springMVC&amp;lt;/servlet-name&amp;gt;    &amp;lt;servlet-class&amp;gt;       org.springframework.web.servlet.DispatcherServlet    &amp;lt;/servle">
@@ -428,6 +428,12 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;servlet&gt;</div><div class="line">    &lt;servlet-name&gt;springMVC&lt;/servlet-name&gt;</div><div class="line">    &lt;servlet-class&gt;</div><div class="line">       org.springframework.web.servlet.DispatcherServlet</div><div class="line">    &lt;/servlet-class&gt;</div><div class="line">    &lt;init-param&gt;</div><div class="line">   	&lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;</div><div class="line">   	&lt;param-value&gt;classpath:springMVC-servlet.xml&lt;/param-value&gt;</div><div class="line">   &lt;/init-param&gt;</div><div class="line">   &lt;load-on-startup&gt;1&lt;/load-on-startup&gt;</div><div class="line"> &lt;/servlet&gt;</div></pre></td></tr></table></figure></li>
 </ul>
 <p>这里的classpath路径指的是EB-INF/classes的目录</p>
+<ul>
+<li>二
+通过spring注解创建的Bean，默认是单例模式<br>
+如果需要多例模式用如下方式：</li>
+</ul>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)</div><div class="line">public class HelloService &#123;</div><div class="line">&#125;</div><div class="line">或者</div><div class="line">@Scope(&quot;prototype&quot;)</div><div class="line">public class HelloService &#123;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -463,6 +469,10 @@
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/06/01/Redis-教程/" rel="next" title="Redis 教程">
+                <i class="fa fa-chevron-left"></i> Redis 教程
+              </a>
             
           </div>
 
@@ -542,7 +552,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -553,7 +563,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -564,7 +574,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
