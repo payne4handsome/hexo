@@ -5,11 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-<<<<<<< HEAD
-  <updated>2017-05-28T07:54:17.000Z</updated>
-=======
-  <updated>2017-06-01T03:04:47.235Z</updated>
->>>>>>> 382eb92e1e8d0ee6820320bbf9eb11225629ddd8
+  <updated>2017-09-10T07:04:41.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,27 +16,520 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-<<<<<<< HEAD
-    <title>SpringMVC深入解析</title>
-    <link href="http://yoursite.com/2017/05/28/SpringMVC%E6%B7%B1%E5%85%A5%E8%A7%A3%E6%9E%90/"/>
-    <id>http://yoursite.com/2017/05/28/SpringMVC深入解析/</id>
-    <published>2017-05-28T07:53:43.000Z</published>
-    <updated>2017-05-28T07:54:17.000Z</updated>
+    <title>minio笔记</title>
+    <link href="http://yoursite.com/2017/08/29/minio-%E7%AC%94%E8%AE%B0/"/>
+    <id>http://yoursite.com/2017/08/29/minio-笔记/</id>
+    <published>2017-08-29T06:48:33.000Z</published>
+    <updated>2017-09-10T07:04:41.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Minio 常用命令</p>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># mac 安装minio</span></div><div class="line">brew install minio/stable/minio</div><div class="line"><span class="comment"># 启动minio server</span></div><div class="line">minio server ~/Photos</div><div class="line"><span class="comment"># 安装minio client</span></div><div class="line">brew install minio/stable/mc</div></pre></td></tr></table></figure></p>
+]]></content>
     
     <summary type="html">
     
+      &lt;p&gt;Minio 常用命令&lt;/p&gt;
+&lt;p&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;di
+    
     </summary>
     
-      <category term="笔记" scheme="http://yoursite.com/categories/%E7%AC%94%E8%AE%B0/"/>
+      <category term="Minio" scheme="http://yoursite.com/categories/Minio/"/>
     
     
-      <category term="springMVC" scheme="http://yoursite.com/tags/springMVC/"/>
-=======
+      <category term="Minio 安装" scheme="http://yoursite.com/tags/Minio-%E5%AE%89%E8%A3%85/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>java 注解</title>
+    <link href="http://yoursite.com/2017/08/28/java-%E6%B3%A8%E8%A7%A3/"/>
+    <id>http://yoursite.com/2017/08/28/java-注解/</id>
+    <published>2017-08-27T16:16:38.000Z</published>
+    <updated>2017-09-10T06:52:37.000Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>本文介绍java中的注解，第一部分给出注解的基础介绍，第二部给出一个注解的应用实例。</p>
+</blockquote>
+<p>Java注解分为2个部分</p>
+<ul>
+<li>自定义注解</li>
+<li>元注解</li>
+</ul>
+<h2>一、注解介绍</h2>
+<p>1、Java 注解语法</p>
+<p><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Modifiers <span class="meta">@interface</span> AnnotationName&#123;</div><div class="line">element1 declaration;</div><div class="line">element2 declaration;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>每一个元素的语法如下：</p>
+<p><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function">type <span class="title">elementName</span><span class="params">()</span></span>;</div><div class="line"><span class="function">or</span></div><div class="line">type <span class="title">elementName</span><span class="params">()</span> <span class="keyword">default</span> value;</div></pre></td></tr></table></figure></p>
+<p>2、举例</p>
+<p><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="meta">@interface</span> BugReport&#123;</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">level</span><span class="params">()</span> <span class="keyword">default</span> 1</span>;</div><div class="line"><span class="keyword">public</span> String description;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>3、元注解</p>
+<p>用注解其他注解<br>
+java中定义的四种元注解</p>
+<ul>
+<li>@Target(应用范围，class、method、field),</li>
+<li>@Retention（注解的生命周期）,</li>
+<li>@Documented,</li>
+<li>@Inherited</li>
+</ul>
+<h2>二、元注解解释</h2>
+<p>1、@Target（如果没有声明，则可以修饰任何的范围）：</p>
+<p>@Target说明了Annotation所修饰的对象范围：Annotation可被用于packages、types（类、接口、枚举、Annotation类型）、类型成员（方法、构造方法、成员变量、枚举值）、方法参数和本地变量（如循环变量、catch参数）。在Annotation类型的声明中使用了target可更加明晰其修饰的目标。
+作用：用于描述注解的使用范围（即：被描述的注解可以用在什么地方）</p>
+<p>取值(ElementType)有：</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">　　　　1.CONSTRUCTOR:用于描述构造器</div><div class="line">　　　　2.FIELD:用于描述域</div><div class="line">　　　　3.LOCAL_VARIABLE:用于描述局部变量</div><div class="line">　　　　4.METHOD:用于描述方法</div><div class="line">　　　　5.PACKAGE:用于描述包</div><div class="line">　　　　6.PARAMETER:用于描述参数</div><div class="line">　　　　7.TYPE:用于描述类、接口(包括注解类型)或enum声明</div></pre></td></tr></table></figure></p>
+<p>2、@Retention（如果没有声明，则默认为class级别）：</p>
+<p>@Retention定义了该Annotation被保留的时间长短：某些Annotation仅出现在源代码中，而被编译器丢弃；而另一些却被编译在class文件中；编译在class文件中的Annotation可能会被虚拟机忽略，而另一些在class被装载时将被读取（请注意并不影响class的执行，因为Annotation与class在使用上是被分离的）。使用这个meta-Annotation可以对Annotation的“生命周期”限制。</p>
+<p>作用：表示需要在什么级别保存该注释信息，用于描述注解的生命周期（即：被描述的注解在什么范围内有效）</p>
+<p>取值（RetentionPoicy）有：</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"> </div><div class="line">　　　　1.SOURCE:在源文件中有效（即源文件保留）</div><div class="line">　　　　2.CLASS:在class文件中有效（即class保留）</div><div class="line">　　　　3.RUNTIME:在运行时有效（即运行时保留）</div></pre></td></tr></table></figure></p>
+<p>3、@Documented:</p>
+<p>@Documented用于描述其它类型的annotation应该被作为被标注的程序成员的公共API，因此可以被例如javadoc此类的工具文档化。Documented是一个标记注解，没有成员。<br>
+4、@Inherited：</p>
+<p>@Inherited元注解是一个标记注解，@Inherited阐述了某个被标注的类型是被继承的。如果一个使用了@Inherited修饰的annotation类型被用于一个class，则这个annotation将被用于该class的子类。</p>
+<p>注意：@Inheritedannotation类型是被标注过的class的子类所继承。类并不从它所实现的接口继承annotation，方法并不从它所重载的方法继承annotation。</p>
+<p>当@Inheritedannotation类型标注的annotation的Retention是RetentionPolicy.RUNTIME，则反射API增强了这种继承性。如果我们使用java.lang.reflect去查询一个@Inheritedannotation类型的annotation时，反射代码检查将展开工作：检查class和其父类，直到发现指定的annotation类型被发现，或者到达类继承结构的顶层。</p>
+<h2>三、应用实例</h2>
+<p>注解本身是没有声明作用的，只用通过java的反射，注解才有意义，实例作用如下：</p>
+<p><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div></pre></td><td class="code"><pre><div class="line">* 作用：一般公司中会用代码review的环节，这个写了一个工具，别人在看代码的时候</div><div class="line"> * 		如果发现的代码中的问题，直接添加注解，包括Bug的严重程度和错误信息</div><div class="line"> * <span class="number">1</span>、BugReport 自定义注解，用于注解发现代码中的bug</div><div class="line"> * <span class="number">2</span>、DemoBugReport 要review的代码</div><div class="line"> */</div><div class="line">BugReport：注解定义</div><div class="line"><span class="meta">@Target</span>(&#123;ElementType.TYPE,ElementType.FIELD,ElementType.METHOD&#125;)</div><div class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)</div><div class="line"><span class="meta">@Documented</span></div><div class="line"><span class="meta">@Inherited</span></div><div class="line"><span class="keyword">public</span> <span class="meta">@interface</span> BugReport &#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">level</span><span class="params">()</span> <span class="keyword">default</span> 1</span>;<span class="comment">//bug 严重级别</span></div><div class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">description</span><span class="params">()</span></span>;<span class="comment">//bug 信息描述</span></div><div class="line">&#125;</div><div class="line">DemoBugReport：注解运用</div><div class="line"><span class="meta">@BugReport</span>(level=<span class="number">10</span>,description=<span class="string">"should use abstract classs"</span>)</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DemoBugReport</span> </span>&#123;</div><div class="line">	<span class="meta">@BugReport</span>(level=<span class="number">1</span>,description=<span class="string">"warning 1"</span>)</div><div class="line">	<span class="keyword">public</span> <span class="keyword">int</span> value1;</div><div class="line">	<span class="meta">@BugReport</span>(level=<span class="number">2</span>,description=<span class="string">"warning 2"</span>)</div><div class="line">	<span class="keyword">public</span> String value2;</div><div class="line">	<span class="meta">@BugReport</span>(level=<span class="number">3</span>,description=<span class="string">"warning 3"</span>)</div><div class="line">	<span class="keyword">public</span> <span class="keyword">float</span> value3;</div><div class="line">	<span class="meta">@BugReport</span>(level=<span class="number">1</span>,description=<span class="string">"error 1"</span>)</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">fun1</span><span class="params">()</span></span>&#123; &#125;</div><div class="line">	<span class="meta">@BugReport</span>(level=<span class="number">1</span>,description=<span class="string">"error 2"</span>)</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">fun2</span><span class="params">()</span></span>&#123; &#125;</div><div class="line">	<span class="meta">@BugReport</span>(level=<span class="number">1</span>,description=<span class="string">"error 3"</span>)</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">fun3</span><span class="params">()</span></span>&#123; &#125;</div><div class="line">	<span class="meta">@BugReport</span>(level=<span class="number">1</span>,description=<span class="string">"4"</span>)</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">fun4</span><span class="params">()</span></span>&#123; &#125;</div><div class="line">	</div><div class="line">&#125;</div><div class="line">ReviewLog：通过反射来生成Bug 报告</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ReviewLog</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		Class c = DemoBugReport.class;</div><div class="line">		Annotation[] classAnnoatoins = c.getAnnotations();</div><div class="line">		System.out.println(c.getName()+<span class="string">" bug report"</span>);</div><div class="line">		System.out.println();</div><div class="line">		<span class="keyword">for</span>(Annotation an:classAnnoatoins)&#123;</div><div class="line">			<span class="keyword">if</span>(an <span class="keyword">instanceof</span> BugReport)&#123;</div><div class="line">				BugReport report = (BugReport)an;</div><div class="line">				System.out.println(<span class="string">"bug level:"</span>+report.level()+<span class="string">"\t"</span>+<span class="string">"error info:"</span>+report.description());</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		System.out.println();</div><div class="line">		System.out.println(<span class="string">"field bug report"</span>);</div><div class="line">		System.out.println();</div><div class="line">		Field[] fs = c.getFields();</div><div class="line">		<span class="keyword">for</span>(Field f:fs)&#123;</div><div class="line">			Annotation[] fieldAnnoations = f.getAnnotations();</div><div class="line">			<span class="keyword">for</span>(Annotation an:fieldAnnoations)&#123;</div><div class="line">				<span class="keyword">if</span>(an <span class="keyword">instanceof</span> BugReport)&#123;</div><div class="line">					BugReport report = (BugReport)an;</div><div class="line">					System.out.println(f.getName()+<span class="string">"\t"</span>+<span class="string">"bug level:"</span>+report.level()+<span class="string">"\t"</span>+<span class="string">"error info:"</span>+report.description());</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		System.out.println();</div><div class="line">		System.out.println(<span class="string">"method bug report"</span>);</div><div class="line">		System.out.println();</div><div class="line">		Method[] ms = c.getMethods();</div><div class="line">		<span class="keyword">for</span>(Method m:ms)&#123;</div><div class="line">			Annotation[] methodAnnoations = m.getAnnotations();</div><div class="line">			<span class="keyword">for</span>(Annotation an:methodAnnoations)&#123;</div><div class="line">				<span class="keyword">if</span>(an <span class="keyword">instanceof</span> BugReport)&#123;</div><div class="line">					BugReport report = (BugReport)an;</div><div class="line">					System.out.println(m.getName()+<span class="string">"\t"</span>+<span class="string">"bug level:"</span>+report.level()+<span class="string">"\t"</span>+<span class="string">"error info:"</span>+report.description());</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>输出信息：
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">com.sunny.annotation.DemoBugReport bug report</div><div class="line"></div><div class="line">bug level:10	error info:should use abstract classs</div><div class="line"></div><div class="line">field bug report</div><div class="line"></div><div class="line">value1	bug level:1	error info:warning 1</div><div class="line">value2	bug level:2	error info:warning 2</div><div class="line">value3	bug level:3	error info:warning 3</div><div class="line"></div><div class="line">method bug report</div><div class="line"></div><div class="line">fun1	bug level:1	error info:error 1</div><div class="line">fun2	bug level:1	error info:error 2</div><div class="line">fun3	bug level:1	error info:error 3</div><div class="line">fun4	bug level:1	error info:4</div></pre></td></tr></table></figure></p>
+<h2>四、备注</h2>
+<p>经常会看到如下面的注解</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">@RequestMapping(&quot;hello&quot;)</div></pre></td></tr></table></figure></p>
+<p>上面的注解的圆括号中是不带属性名称的，那是因为RequestMapping中有value这个字段，java会特殊处理，不需要指定属性名也可以用,例如下面这样：</p>
+<p><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="meta">@interface</span> MyAnnotation &#123;</div><div class="line">	<span class="function">String <span class="title">value</span><span class="params">()</span></span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>就可以不带属性名称使用了:</p>
+<p><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Test</span>(<span class="string">"hello"</span>)</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo</span> </span>&#123;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;本文介绍java中的注解，第一部分给出注解的基础介绍，第二部给出一个注解的应用实例。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Java注解分为2个部分&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;自定义注解&lt;/li&gt;
+&lt;li&gt;元注解&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;
+    
+    </summary>
+    
+      <category term="J2SE" scheme="http://yoursite.com/categories/J2SE/"/>
+    
+    
+      <category term="java注解" scheme="http://yoursite.com/tags/java%E6%B3%A8%E8%A7%A3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Docker镜像</title>
+    <link href="http://yoursite.com/2017/08/26/Docker%E9%95%9C%E5%83%8F/"/>
+    <id>http://yoursite.com/2017/08/26/Docker镜像/</id>
+    <published>2017-08-26T09:47:02.000Z</published>
+    <updated>2017-08-27T11:28:04.000Z</updated>
+    
+    <content type="html"><![CDATA[<ol>
+<li>获取镜像命令格式</li>
+</ol>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker pull [选项] [Docker Registry地址]&lt;仓库名&gt;:&lt;标签&gt;</div></pre></td></tr></table></figure></p>
+<p>Docker Registry地址：地址的格式一般是 &lt;域名/IP&gt;[:端口号]。默认地址是 Docker Hub。<br>
+仓库名：如之前所说，这里的仓库名是两段式名称，既 &lt;用户名&gt;/软件名&gt;。对于 Docker Hub，如果不给出用户名，则默认为 library，也就是官方镜像。<br>
+例如下载ubuntu的：
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker pull ubuntu:14.04</div></pre></td></tr></table></figure></p>
+<p>运行</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker run -it --rm ubuntu:14.04 bash</div></pre></td></tr></table></figure></p>
+<p><strong>参数说明</strong></p>
+<ul>
+<li>-it：这是两个参数，一个是 -i：交互式操作，一个是 -t 终端。我们这里打算进入 bash 执行一些命令并查看返回结果，因此我们需要交互式终端。</li>
+<li>--rm：这个参数是说容器退出后随之将其删除。默认情况下，为了排障需求，退出的容器并不会立即删除，除非手动 docker rm。我们这里只是随便执行个命令，看看结果，不需要排障和保留结果，因此使用 --rm 可以避免浪费空间。</li>
+<li>ubuntu:14.04：这是指用 ubuntu:14.04 镜像为基础来启动容器。</li>
+<li>bash：放在镜像名后的是命令，这里我们希望有个交互式 Shell，因此用的是 bash。</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;ol&gt;
+&lt;li&gt;获取镜像命令格式&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td c
+    
+    </summary>
+    
+      <category term="Docker" scheme="http://yoursite.com/categories/Docker/"/>
+    
+    
+      <category term="Docker 镜像" scheme="http://yoursite.com/tags/Docker-%E9%95%9C%E5%83%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Docker 基本概念以及安装</title>
+    <link href="http://yoursite.com/2017/08/26/Docker-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E4%BB%A5%E5%8F%8A%E5%AE%89%E8%A3%85/"/>
+    <id>http://yoursite.com/2017/08/26/Docker-基本概念以及安装/</id>
+    <published>2017-08-26T08:53:55.000Z</published>
+    <updated>2017-08-26T09:40:13.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2>Docker基本概念</h2>
+<h3>Docker镜像</h3>
+<p>Docker 镜像是一个特殊的文件系统，除了提供容器运行时所需的程序、库、资源、配置等文件外，还包含了一些为运行时准备的一些配置参数（如匿名卷、环境变量、用户等）。镜像不包含任何动态数据，其内容在构建之后也不会被改变。
+因为镜像包含操作系统完整的 root 文件系统，其体积往往是庞大的，因此在 Docker 设计时，就充分利用 Union FS 的技术，将其设计为分层存储的架构。所以严格来说，镜像并非是像一个 ISO 那样的打包文件，镜像只是一个虚拟的概念，其实际体现并非由一个文件组成，而是由一组文件系统组成，或者说，由多层文件系统联合组成。</p>
+<h3>Docker 容器</h3>
+<p>镜像（Image）和容器（Container）的关系，就像是面向对象程序设计中的类和实例一样，镜像是静态的定义，容器是镜像运行时的实体。容器可以被创建、启动、停止、删除、暂停等。
+容器的实质是进程，但与直接在宿主执行的进程不同，容器进程运行于属于自己的独立的 命名空间。因此容器可以拥有自己的 root 文件系统、自己的网络配置、自己的进程空间，甚至自己的用户 ID 空间。
+**按照 Docker 最佳实践的要求，容器不应该向其存储层内写入任何数据，容器存储层要保持无状态化。所有的文件写入操作，都应该使用 数据卷（Volume）、或者绑定宿主目录，在这些位置的读写会跳过容器存储层，直接对宿主(或网络存储)发生读写，其性能和稳定性更高。</p>
+<p>数据卷的生存周期独立于容器，容器消亡，数据卷不会消亡。因此，使用数据卷后，容器可以随意删除、重新 run，数据却不会丢失。**</p>
+<h3>Docker Registry</h3>
+<p>docker Registry上一个服务：如果需要在其它服务器上使用镜像，我们就需要一个集中的存储、分发镜像的服务 。<br>
+一个 Docker Registry 中可以包含多个仓库（Repository）；每个仓库可以包含多个标签（Tag）；每个标签对应一个镜像。<br>
+通常，一个仓库会包含同一个软件不同版本的镜像，而标签就常用于对应该软件的各个版本。我们可以通过 &lt;仓库名&gt;:&lt;标签&gt; 的格式来指定具体是这个软件哪个版本的镜像。如果不给出标签，将以 latest 作为默认标签。</p>
+<h2>mac系统安装Docker</h2>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew cask install docker</div></pre></td></tr></table></figure></p>
+<p>前提的安装homebrew， 当然也可以去官网上直接下载安装，方法比较简单。</p>
+<p>可以通过如下命令查看安装的信息
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">docker info</div><div class="line">docker --version</div><div class="line">docker-compose --version</div><div class="line">docker-machine --version</div></pre></td></tr></table></figure></p>
+<p>我们先试着安装一下nginx服务，就下面一行简单的命令就可以搞定
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker run -d -p 80:80 --name webserver nginx</div></pre></td></tr></table></figure></p>
+<p>要停止 Nginx 服务器并删除执行下面的命令：</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">docker stop webserver</div><div class="line">docker rm webserver</div></pre></td></tr></table></figure></p>
+<h2>镜像加速器</h2>
+<p>如果在国内使用docker下载镜像可能或很慢，那么我就需要配置镜像加速器，如果选用阿里的镜像加速器的可以参考下面的地址
+<a href="https://cr.console.aliyun.com/#/accelerator" target="_blank" rel="external">阿里镜像加速器</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2&gt;Docker基本概念&lt;/h2&gt;
+&lt;h3&gt;Docker镜像&lt;/h3&gt;
+&lt;p&gt;Docker 镜像是一个特殊的文件系统，除了提供容器运行时所需的程序、库、资源、配置等文件外，还包含了一些为运行时准备的一些配置参数（如匿名卷、环境变量、用户等）。镜像不包含任何动态数据，其内容在构
+    
+    </summary>
+    
+      <category term="Docker" scheme="http://yoursite.com/categories/Docker/"/>
+    
+    
+      <category term="Docker概念及安装" scheme="http://yoursite.com/tags/Docker%E6%A6%82%E5%BF%B5%E5%8F%8A%E5%AE%89%E8%A3%85/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Dokcer 简介</title>
+    <link href="http://yoursite.com/2017/08/26/Dokcer-%E7%AE%80%E4%BB%8B/"/>
+    <id>http://yoursite.com/2017/08/26/Dokcer-简介/</id>
+    <published>2017-08-26T07:33:00.000Z</published>
+    <updated>2017-08-26T08:52:12.000Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>Docker 2013年开源，加入Linux 基金会. Docker使用Google公司推出的GO 语言进行开发实现， 基于Linux内核的cgroup, namespace, 以及AUFS类的Union FS 等技术，对进程进行封装隔离，<strong>属于操作系统层面的虚拟化技术</strong>。Docker 在容器的基础上，进行了进一步的封装，从文件系统、网络互联到进程隔离等等，极大的简化了容器的创建和维护。使得 Docker 技术比虚拟机技术更为轻便、快捷。</p>
+</blockquote>
+<p>传统虚拟机技术是虚拟出一套硬件后，在其上运行一个完整操作系统，在该系统上再运行所需应用进程；而容器内的应用进程直接运行于宿主的内核，容器内没有自己的内核，而且也没有进行硬件虚拟。因此容器要比传统虚拟机更为轻便。</p>
+<p>下图比较了传统虚拟化技术和Docker技术的区别<br>
+<img src="/2017/08/26/Dokcer-简介/1.png" alt="传统虚拟化技术">
+<img src="/2017/08/26/Dokcer-简介/2.png" alt="Docker技术"></p>
+<h2>Docker的优点</h2>
+<ol>
+<li><strong>更高效的利用系统资源</strong>
+Docker不需要对硬件资源进行虚拟化，所以节省操作的系统的开销</li>
+<li><strong>更快速的启动时间</strong>
+传统的虚拟机技术启动应用服务往往需要数分钟，而 Docker 容器应用，由于直接运行于宿主内核，无需启动完整的操作系统，因此可以做到秒级、甚至毫秒级的启动时间。大大的节约了开发、测试、部署的时间。</li>
+<li><strong>一致的运行环境</strong>
+开发过程中一个常见的问题是环境一致性问题。由于开发环境、测试环境、生产环境不一致，导致有些 bug 并未在开发过程中被发现。而 Docker 的镜像提供了除内核外完整的运行时环境，确保了应用运行环境一致性，从而不会再出现 “这段代码在我机器上没问题啊” 这类问题。</li>
+<li><strong>持续交付和部署</strong></li>
+<li><strong>更轻松的迁移</strong></li>
+<li><strong>更轻松的维护和扩展</strong></li>
+<li><strong>对比传统虚拟机总结</strong></li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th style="text-align:right">容器</th>
+<th style="text-align:center">虚拟机</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>启动</td>
+<td style="text-align:right">秒级</td>
+<td style="text-align:center">分钟级</td>
+</tr>
+<tr>
+<td>硬盘使用</td>
+<td style="text-align:right">MB</td>
+<td style="text-align:center">GB</td>
+</tr>
+<tr>
+<td>性能</td>
+<td style="text-align:right">接近原生</td>
+<td style="text-align:center">弱于</td>
+</tr>
+<tr>
+<td>系统支持</td>
+<td style="text-align:right">单个系统接近上千个容器</td>
+<td style="text-align:center">一般几十个</td>
+</tr>
+</tbody>
+</table>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Docker 2013年开源，加入Linux 基金会. Docker使用Google公司推出的GO 语言进行开发实现， 基于Linux内核的cgroup, namespace, 以及AUFS类的Union FS 等技术，对进程进行封装隔离，&lt;str
+    
+    </summary>
+    
+      <category term="Docker" scheme="http://yoursite.com/categories/Docker/"/>
+    
+    
+      <category term="Docker" scheme="http://yoursite.com/tags/Docker/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于java Integer的一个小问题</title>
+    <link href="http://yoursite.com/2017/08/19/%E5%85%B3%E4%BA%8Ejava-Integer%E7%9A%84%E4%B8%80%E4%B8%AA%E5%B0%8F%E9%97%AE%E9%A2%98/"/>
+    <id>http://yoursite.com/2017/08/19/关于java-Integer的一个小问题/</id>
+    <published>2017-08-19T08:43:10.000Z</published>
+    <updated>2017-08-19T10:31:12.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>下面这段代码片段的输出是什么？
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Integer i1 = 127,i2 = 127,i3=128,i4=128;</div><div class="line">   System.out.println(i1==i2);</div><div class="line">   System.out.println(i1.equals(i2));</div><div class="line">   System.out.println(i3==i4);</div><div class="line">   System.out.println(i3.equals(i4));</div></pre></td></tr></table></figure></p>
+<p>答案如下
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">true</div><div class="line">false</div><div class="line">true</div><div class="line">true</div></pre></td></tr></table></figure></p>
+<p>为什么是这样呢？首先equals方法我们是可以理解的，应为比较的值嘛，所以i1和i2都是等的，但是java中的“==”是比较的地址，为什么i1和i2是等的，i3和i4又是不等的呢？我们通过反编译程序把上面代码的字节码反编译一下，看看得到是什么</p>
+<pre><code>   Integer i1 = Integer.valueOf(127);Integer i2 = Integer.valueOf(127);Integer i3 = Integer.valueOf(128);Integer i4 = Integer.valueOf(128);
+    System.out.println(i1 == i2);
+    System.out.println(i1.equals(i2));
+    System.out.println(i3 == i4);
+    System.out.println(i3.equals(i4));
+</code></pre>
+<p>我们在看看valueOf的源码</p>
+<pre><code class="language-java"> public static Integer valueOf(int i) {
+        if (i &gt;= IntegerCache.low &amp;&amp; i &lt;= IntegerCache.high)
+            return IntegerCache.cache[i + (-IntegerCache.low)];
+        return new Integer(i);
+    }
+</code></pre>
+<p>我们可以看到如果i的值是&gt;=-128并且是&lt;=127的（low，high分别是-128和127），那么java久就从一个缓冲里面读取数据，这就可以解释我们上面存在的问题呢。其实这么缓存是指也是可以通过jvm参数进行修改的</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;下面这段代码片段的输出是什么？
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div
+    
+    </summary>
+    
+      <category term="java snippet" scheme="http://yoursite.com/categories/java-snippet/"/>
+    
+    
+      <category term="Java Integer" scheme="http://yoursite.com/tags/Java-Integer/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Mybatis 学习笔记一</title>
+    <link href="http://yoursite.com/2017/08/19/Mybatis-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>http://yoursite.com/2017/08/19/Mybatis-学习笔记/</id>
+    <published>2017-08-19T07:11:37.000Z</published>
+    <updated>2017-08-19T07:44:02.000Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>这篇博文记录一下Mybatis的学习情况</p>
+</blockquote>
+<p>[Mybatis官方教程]（http://www.mybatis.org/mybatis-3/zh/index.html）</p>
+<h2>Mybatsi配置文件</h2>
+<h3>configuration xml</h3>
+<p>该文件主要配置Mybatis的一些核心配置，包括数据源、事务、mapper 配置文件的路径、别名等配置信息，官方教程列出了详细的配置信息，这里不在赘述，下面是我的配置文件，仅供参考</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">&lt;configuration&gt;</div><div class="line">	&lt;properties resource=&quot;database.properties&quot;&gt;&lt;/properties&gt;</div><div class="line">	&lt;settings&gt;</div><div class="line">		&lt;setting name=&quot;cacheEnabled&quot; value=&quot;true&quot; /&gt;</div><div class="line">	&lt;/settings&gt;</div><div class="line">	&lt;typeAliases&gt;</div><div class="line">		&lt;typeAlias type=&quot;com.payne.entity.User&quot; alias=&quot;User&quot; /&gt;</div><div class="line">		&lt;typeAlias type=&quot;com.payne.entity.Board&quot; alias=&quot;Board&quot; /&gt;</div><div class="line">		&lt;typeAlias type=&quot;com.payne.entity.Topic&quot; alias=&quot;Topic&quot; /&gt;</div><div class="line">		&lt;typeAlias type=&quot;com.payne.entity.Reply&quot; alias=&quot;Reply&quot; /&gt;</div><div class="line">	&lt;/typeAliases&gt;</div><div class="line">	&lt;environments default=&quot;development&quot;&gt;</div><div class="line">		&lt;environment id=&quot;development&quot;&gt;</div><div class="line">			&lt;transactionManager type=&quot;JDBC&quot; /&gt;</div><div class="line">			&lt;dataSource type=&quot;POOLED&quot;&gt;</div><div class="line">				&lt;property name=&quot;driver&quot; value=&quot;$&#123;driver&#125;&quot; /&gt;</div><div class="line">				&lt;property name=&quot;url&quot; value=&quot;$&#123;url&#125;&quot; /&gt;</div><div class="line">				&lt;property name=&quot;username&quot; value=&quot;$&#123;username&#125;&quot; /&gt;</div><div class="line">				&lt;property name=&quot;password&quot; value=&quot;$&#123;password&#125;&quot; /&gt;</div><div class="line">			&lt;/dataSource&gt;</div><div class="line">		&lt;/environment&gt;</div><div class="line">	&lt;/environments&gt;</div><div class="line">	&lt;mappers&gt;</div><div class="line">		&lt;mapper resource=&quot;userMapper.xml&quot; /&gt;</div><div class="line">		&lt;mapper resource=&quot;userMapper2.xml&quot; /&gt;</div><div class="line">		&lt;mapper resource=&quot;topicMapper.xml&quot; /&gt;</div><div class="line">		&lt;mapper resource=&quot;topicMapper2.xml&quot; /&gt;</div><div class="line">		&lt;mapper resource=&quot;topicMapper3.xml&quot; /&gt;</div><div class="line">	&lt;/mappers&gt;</div><div class="line"></div><div class="line">&lt;/configuration&gt;</div></pre></td></tr></table></figure></p>
+<h3>mapper配置文件</h3>
+<p>Mybatis主要是主要用来放置我们sql语句的地方，下面是我的两个mapper，一个对应用户表，一个对应话题表，可以查看一个用户发表了那些话题</p>
+<p>userMapper.xml
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div></pre></td><td class="code"><pre><div class="line">&lt;mapper namespace=&quot;userMapper&quot;&gt;</div><div class="line">	&lt;sql id=&quot;selectAllUsers&quot;&gt;</div><div class="line">		select *  from user</div><div class="line">	&lt;/sql&gt;</div><div class="line">	&lt;select id=&quot;selectOneUser&quot; parameterType=&quot;map&quot; resultType=&quot;User&quot;&gt;</div><div class="line">		select * from user where uId = #&#123;id&#125; and uName = #&#123;name&#125;</div><div class="line">	&lt;/select&gt;</div><div class="line">	&lt;select id=&quot;selectUserByUId&quot; parameterType=&quot;int&quot; resultType=&quot;hashmap&quot;&gt;</div><div class="line">		&lt;include refid=&quot;selectAllUsers&quot;&gt;&lt;/include&gt;</div><div class="line">		where uId = #&#123;id&#125;</div><div class="line">	&lt;/select&gt;</div><div class="line">	&lt;select id=&quot;selectAllUsers&quot; resultType=&quot;User&quot;&gt;</div><div class="line">		&lt;include refid=&quot;selectAllUsers&quot;&gt;&lt;/include&gt;</div><div class="line">	&lt;/select&gt;</div><div class="line"></div><div class="line">	&lt;select id=&quot;selectAllTopic&quot; resultType=&quot;Topic&quot;&gt;</div><div class="line">		select * from topic</div><div class="line">	&lt;/select&gt;</div><div class="line">	&lt;select id=&quot;selectTopicsByUId&quot; resultMap=&quot;resultUsers&quot;&gt;</div><div class="line">		select</div><div class="line">		u.uId as userId</div><div class="line">		,u.uName as userName</div><div class="line">		,uPass as userPass</div><div class="line">		,u.head as userHead</div><div class="line">		,u.regTime as userRegTime</div><div class="line">		,u.gender as userGender</div><div class="line">		,t.topicId as topicId</div><div class="line">		,t.title as topicTitle</div><div class="line">		,t.content as topicContent</div><div class="line">		,t.publishTime as</div><div class="line">		topicPublishTime</div><div class="line">		,t.modifyTime as topicModifyTime</div><div class="line">		from user u left join</div><div class="line">		topic t on u.uId = t.uId where u.uId = #&#123;id&#125;</div><div class="line">	&lt;/select&gt;</div><div class="line">	&lt;resultMap id=&quot;resultUsers&quot; type=&quot;User&quot; &gt;</div><div class="line">		&lt;id property=&quot;uid&quot; column=&quot;userId&quot; /&gt;</div><div class="line">		&lt;result property=&quot;uname&quot; column=&quot;userName&quot; /&gt;</div><div class="line">		&lt;result property=&quot;upass&quot; column=&quot;userPass&quot; /&gt;</div><div class="line">		&lt;result property=&quot;head&quot; column=&quot;userHead&quot; /&gt;</div><div class="line">		&lt;result property=&quot;regTime&quot; column=&quot;userRegTime&quot; /&gt;</div><div class="line">		&lt;result property=&quot;gender&quot; column=&quot;userGender&quot; /&gt;</div><div class="line">		&lt;collection property=&quot;topics&quot; javaType=&quot;ArrayList&quot; ofType=&quot;Topic&quot; resultMap=&quot;topicMapper.resultTopic&quot;&gt;</div><div class="line">			</div><div class="line">		&lt;/collection&gt;</div><div class="line">	&lt;/resultMap&gt;</div><div class="line">	&lt;resultMap type=&quot;User&quot; id=&quot;resultUser&quot;&gt;</div><div class="line">		&lt;id property=&quot;uid&quot; column=&quot;userId&quot; /&gt;</div><div class="line">		&lt;result property=&quot;uname&quot; column=&quot;userName&quot; /&gt;</div><div class="line">		&lt;result property=&quot;upass&quot; column=&quot;userPass&quot; /&gt;</div><div class="line">		&lt;result property=&quot;head&quot; column=&quot;userHead&quot; /&gt;</div><div class="line">		&lt;result property=&quot;regTime&quot; column=&quot;userRegTime&quot; /&gt;</div><div class="line">		&lt;result property=&quot;gender&quot; column=&quot;userGender&quot; /&gt;</div><div class="line">	&lt;/resultMap&gt;</div><div class="line">&lt;/mapper&gt;</div></pre></td></tr></table></figure></p>
+<p>topicMapper.xml</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line">&lt;mapper namespace=&quot;topicMapper&quot;&gt;</div><div class="line"></div><div class="line">  &lt;select id=&quot;selectAllTopic&quot;  resultType=&quot;Topic&quot;&gt;</div><div class="line">    select * from topic</div><div class="line">  &lt;/select&gt;</div><div class="line">  &lt;select id=&quot;selectAllTopicsByUid&quot;  resultMap=&quot;resultTopics&quot;&gt;</div><div class="line">    select </div><div class="line">    u.uId as userId</div><div class="line">    ,u.uName as userName</div><div class="line">    ,uPass as userPass</div><div class="line">    ,u.head as userHead</div><div class="line">    ,u.regTime as userRegTime</div><div class="line">    ,u.gender as userGender</div><div class="line">    ,t.topicId as topicId</div><div class="line">    ,t.title as topicTitle</div><div class="line">    ,t.content as topicContent</div><div class="line">    ,t.publishTime as topicPublishTime</div><div class="line">    ,t.modifyTime as topicModifyTime</div><div class="line">     from topic t left join user u on u.uId = t.uId</div><div class="line">  &lt;/select&gt;</div><div class="line">  &lt;resultMap id=&quot;resultTopics&quot; type=&quot;Topic&quot;&gt;</div><div class="line">    &lt;id property=&quot;topicId&quot; column=&quot;topicId&quot;/&gt;</div><div class="line"> 	&lt;result property=&quot;title&quot; column=&quot;topicTitle&quot;/&gt;</div><div class="line"> 	&lt;result property=&quot;content&quot; column=&quot;topicContent&quot;/&gt;</div><div class="line"> 	&lt;result property=&quot;publishTime&quot; column=&quot;topicPublishTime&quot;/&gt;</div><div class="line"> 	&lt;result property=&quot;modifyTime&quot; column=&quot;topicModifyTime&quot;/&gt;</div><div class="line">  	</div><div class="line">	&lt;collection property=&quot;user&quot; javaType=&quot;User&quot;&gt;</div><div class="line">		&lt;id property=&quot;uid&quot; column=&quot;userId&quot;/&gt;</div><div class="line">	  	&lt;result property=&quot;uname&quot; column=&quot;userName&quot;/&gt;</div><div class="line">	  	&lt;result property=&quot;upass&quot; column=&quot;userPass&quot;/&gt;</div><div class="line">	  	&lt;result property=&quot;head&quot; column=&quot;userHead&quot;/&gt;</div><div class="line">	  	&lt;result property=&quot;regTime&quot; column=&quot;userRegTime&quot;/&gt;</div><div class="line">	  	&lt;result property=&quot;gender&quot; column=&quot;userGender&quot;/&gt;</div><div class="line">	&lt;/collection&gt;</div><div class="line">  &lt;/resultMap&gt;</div><div class="line">  &lt;resultMap type=&quot;Topic&quot; id=&quot;resultTopic&quot;&gt;</div><div class="line">  		&lt;id property=&quot;topicId&quot; column=&quot;topicId&quot; /&gt;</div><div class="line">		&lt;result property=&quot;title&quot; column=&quot;topicTitle&quot; /&gt;</div><div class="line">		&lt;result property=&quot;content&quot; column=&quot;topicContent&quot; /&gt;</div><div class="line">		&lt;result property=&quot;publishTime&quot; column=&quot;topicPublishTime&quot; /&gt;</div><div class="line">		&lt;result property=&quot;modifyTime&quot; column=&quot;topicModifyTime&quot; /&gt;</div><div class="line">  &lt;/resultMap&gt;</div><div class="line">&lt;/mapper&gt;</div></pre></td></tr></table></figure></p>
+<p>一对一用association标记，多对一、一对多用collection标记</p>
+<h2>获得sqlSessionFactory</h2>
+<p>Mybatis执行sql语句的核心类是sqlSessionFactory，通过如下方式获得sqlSessionFactory
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">InputStream inputStream = null;</div><div class="line">		inputStream = Resources.getResourceAsStream(resourceFile);</div><div class="line">		SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);</div></pre></td></tr></table></figure></p>
+<h2>参数</h2>
+<p>Mybatis给Mapper中的sql语句传递参数, 单个参数直接传递，多个参数可以用索引、类、Map等方式传递</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">List&lt;User&gt; users = sqlSession.selectList(&quot;userMapper.selectTopicsByUId&quot;,1);</div></pre></td></tr></table></figure></p>
+<p><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">      Map&lt;String, Object&gt; mapParams = <span class="keyword">new</span> HashMap&lt;&gt;();</div><div class="line">mapParams.put(<span class="string">"id"</span>, <span class="number">1</span>);</div><div class="line">Map&lt;String,Map&lt;String,String&gt;&gt; map = sqlSession.selectMap(<span class="string">"userMapper.selectUserByUId"</span>, mapParams,<span class="string">"uName"</span>);</div><div class="line">System.out.println(map);</div></pre></td></tr></table></figure></p>
+<h2>其他</h2>
+<p>Mybatis 核心的东西保护ResultMap、动态sql，参见官网</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;这篇博文记录一下Mybatis的学习情况&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;[Mybatis官方教程]（http://www.mybatis.org/mybatis-3/zh/index.html）&lt;/p&gt;
+&lt;h2&gt;Mybatsi配置文件
+    
+    </summary>
+    
+      <category term="MyBatis" scheme="http://yoursite.com/categories/MyBatis/"/>
+    
+    
+      <category term="Mybatis" scheme="http://yoursite.com/tags/Mybatis/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JAVA NIO</title>
+    <link href="http://yoursite.com/2017/06/11/JAVA-NIO/"/>
+    <id>http://yoursite.com/2017/06/11/JAVA-NIO/</id>
+    <published>2017-06-11T10:43:01.000Z</published>
+    <updated>2017-06-12T14:14:17.000Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>Java NIO(New IO)是一个可以替代标准Java IO API的IO API（从Java 1.4开始)，Java NIO提供了与标准IO不同的IO工作方式。
+与标准IO的不同：</p>
+</blockquote>
+<ul>
+<li><strong>Java NIO: Channels and Buffers（通道和缓冲区）</strong></li>
+<li><strong>Java NIO: Non-blocking IO（非阻塞IO）</strong></li>
+<li><strong>Java NIO: Selectors（选择器)</strong>
+Java NIO引入了选择器的概念，选择器用于监听多个通道的事件（比如：连接打开，数据到达）。因此，单个的线程可以监听多个数据通道。</li>
+</ul>
+<h1>Java NIO概述</h1>
+<p>Java NIO 由以下几个核心部分组成：</p>
+<ul>
+<li>Channels</li>
+<li>Buffers</li>
+<li>Selectors</li>
+</ul>
+<h2>Channel与Buffer</h2>
+<p>Java的NIO从Channel开始，Channel向buffer中读，向buffer中写。<br>
+Channel和Buffer有好几种类型。下面是JAVA NIO中的一些主要Channel的实现：</p>
+<ul>
+<li>FileChannel 从文件中读写数据。</li>
+<li>DatagramChannel 能通过UDP读写网络中的数据。</li>
+<li>SocketChannel 能通过TCP读写网络中的数据。</li>
+<li>ServerSocketChannel 可以监听新进来的TCP连接，像Web服务器那样。对每一个新进来的连接都会创建一个SocketChannel。
+这些通道涵盖了UDP 和 TCP 网络IO，以及文件IO</li>
+</ul>
+<h2>Java NIO里关键的Buffer实现</h2>
+<ul>
+<li>ByteBuffer</li>
+<li>CharBuffer</li>
+<li>DoubleBuffer</li>
+<li>FloatBuffer</li>
+<li>IntBuffer</li>
+<li>LongBuffer</li>
+<li>ShortBuffer
+这些Buffer覆盖了你能通过IO发送的基本数据类型：byte, short, int, long, float, double 和 char。</li>
+</ul>
+<h2>Selector</h2>
+<p>Selector允许单线程处理多个 Channel。如果你的应用打开了多个连接（通道），但每个连接的流量都很低，使用Selector就会很方便。</p>
+<h1>Channel</h1>
+<p>Java NIO的通道类似流，但又有些不同：</p>
+<ul>
+<li>既可以从通道中读取数据，又可以写数据到通道。但流的读写通常是单向的。</li>
+<li>通道可以异步地读写。</li>
+<li>通道中的数据总是要先读到一个Buffer，或者总是要从一个Buffer中写入。</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Java NIO(New IO)是一个可以替代标准Java IO API的IO API（从Java 1.4开始)，Java NIO提供了与标准IO不同的IO工作方式。
+与标准IO的不同：&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;st
+    
+    </summary>
+    
+      <category term="J2SE" scheme="http://yoursite.com/categories/J2SE/"/>
+    
+    
+      <category term="NIO" scheme="http://yoursite.com/tags/NIO/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>java 泛型</title>
+    <link href="http://yoursite.com/2017/06/11/java-%E6%B3%9B%E5%9E%8B/"/>
+    <id>http://yoursite.com/2017/06/11/java-泛型/</id>
+    <published>2017-06-11T07:41:00.000Z</published>
+    <updated>2017-06-11T08:02:16.000Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>很多朋友对Java的泛型不是很理解，很多文章写的已不是很清楚，这篇博客对java泛型进行 一个总结。</p>
+</blockquote>
+<ul>
+<li>泛型的转换：</li>
+</ul>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">List&lt;Number&gt; foo1 = new ArrayList&lt;Integer&gt;();//illegal</div></pre></td></tr></table></figure></p>
+<p>很多朋友会写出上面的代码，但会报如下错误：Type mismatch: cannot convert from ArrayList&lt;Integer&gt; to List&lt;Number&gt;尽管Interge是Number的子类，但是ArrayList&lt;Integer&gt;不是List&lt;Number&gt;的子类，所以报错。下图可以很好解释这个问题。</p>
+<p><img src="/2017/06/11/java-泛型/1.gif" alt=""></p>
+<ul>
+<li>java泛型的通配符?
+这里可以分为两类（1）? extends T (2) ? super T.</li>
+</ul>
+<ul>
+<li>1.1很多朋友对这两个不是很理解，也不知道上面时候用，我们知道java中提供泛型技术，是为了提供安全检查的，使得我们写的代码更加的健壮。
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">public static void print_e(List&lt;? extends Number&gt; list)&#123;  </div><div class="line">        for(Number n : list)&#123;  </div><div class="line">            System.out.println(n);  </div><div class="line">        &#125;  </div><div class="line">    &#125;</div></pre></td></tr></table></figure></li>
+</ul>
+<p>上面一个函数，我们可以传递如下的参数<br>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">List&lt;Integer&gt; list_i = new ArrayList&lt;Integer&gt;();  </div><div class="line">        for(int i=0;i&lt;10;i++)&#123;  </div><div class="line">            list_i.add(i);  </div><div class="line">        &#125;  </div><div class="line">        List&lt;Double&gt; list_d = new ArrayList&lt;Double&gt;();  </div><div class="line">        for(int i=0;i&lt;10;i++)&#123;  </div><div class="line">            list_d.add(i+0.0);  </div><div class="line">        &#125;  </div><div class="line">        print_e(list_i);  </div><div class="line">        print_e(list_d);</div></pre></td></tr></table></figure></p>
+<p>使得我们写的代码即具有通用型有可以提供必要的安全检查，当然print_e你可以写出如下形式，这里就不具有安全检查的效果了。
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">void print_e(List list)</div></pre></td></tr></table></figure></p>
+<p>但是经常有的朋友写出如下的代码，我们举一个stackoverflow上的一个例子：<br>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">List&lt;? extends Number&gt; foo3 = new ArrayList&lt;Number&gt;();  // Number &quot;extends&quot; Number (in this context)  </div><div class="line">List&lt;? extends Number&gt; foo3 = new ArrayList&lt;Integer&gt;(); // Integer extends Number </div><div class="line">List&lt;? extends Number&gt; foo3 = new ArrayList&lt;Double&gt;();  // Double extends Number</div></pre></td></tr></table></figure></p>
+<p>上面的代码都是可以通过的，但是如果你向foo3中添加一个元素，比如foo3.add(new Integer(1)),讲话如下错误：
+The method add(capture#1-of ? extends Number) in the type List&lt;capture#1-of ? extends Number&gt; is not applicable for the arguments (Integer)
+很多人觉得奇怪，Integer明明是Number的子类，为什么添加不进去了。
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">List&lt;? extends Number&gt; foo3 = new ArrayList&lt;Number&gt;();  // Number &quot;extends&quot; Number (in this context)</div></pre></td></tr></table></figure></p>
+<p>stackoverflow上一个朋友是这样解释的，解释的很好，借用他的解释如下：
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">Reading - Given the above possible assignments, what type of object are you guarenteed to read from List foo3:  </div><div class="line">  </div><div class="line">You can read a Number because any of the lists that could be assigned to foo3 contain a Number or a subclass of Number.  </div><div class="line">You can&apos;t read an Integer because foo3 could be pointing at a List&lt;Double&gt;.  </div><div class="line">You can&apos;t read a Double because foo3 could be pointing at a List&lt;Integer&gt;.  </div><div class="line">Writing - Given the above possible assignments, what type of object could you add to List foo3 that would be legal for all the above possible ArrayList assignments:  </div><div class="line">  </div><div class="line">You can&apos;t add an Integer because foo3 could be pointing at a List&lt;Double&gt;.  </div><div class="line">You can&apos;t add a Double because foo3 could be pointing at a List&lt;Integer&gt;.  </div><div class="line">You can&apos;t add a Number because foo3 could be pointing at a List&lt;Integer&gt;.  </div><div class="line">You can&apos;t add any object to List&lt;? extends T&gt; because you can&apos;t guarantee what kind of List it is really pointing to, so you can&apos;t guarantee that the object is allowed in that List. The only &quot;guarantee&quot; is that you can only read from it and you&apos;ll get a T or subclass of  T.</div></pre></td></tr></table></figure></p>
+<p>因为 List&lt;? extends Number&gt; foo3 中你既可以添加一个Integer的有可以添加一个Double的，所以编译器不知道你具体添加到的是哪一种类型，所以编译器不允许你添加元素</p>
+<ul>
+<li>1.2再来看一下? super T的例子：
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">List&lt;? super Integer&gt; foo3 = new ArrayList&lt;Integer&gt;();  // Integer is a &quot;superclass&quot; of Integer (in this context)</div><div class="line">List&lt;? super Integer&gt; foo3 = new ArrayList&lt;Number&gt;();   // Number is a superclass of Integer</div><div class="line">List&lt;? super Integer&gt; foo3 = new ArrayList&lt;Object&gt;();   // Object is a superclass of Integer</div></pre></td></tr></table></figure></li>
+</ul>
+<p>stackoverflow的解释如下：<br>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">Reading - Given the above possible assignments, what type of object are you guaranteed to receive when you read from List foo3:  </div><div class="line">  </div><div class="line">You aren&apos;t guaranteed an Integer because foo3 could be pointing at a List&lt;Number&gt; or List&lt;Object&gt;.  </div><div class="line">You aren&apos;t guaranteed an Number because foo3 could be pointing at a List&lt;Object&gt;.  </div><div class="line">The only guarantee is that you will get an instance of an Object or subclass of Object (but you don&apos;t know what subclass).  </div><div class="line">Writing - Given the above possible assignments, what type of object could you add to List foo3 that would be legal for all the above possible ArrayList assignments:  </div><div class="line">  </div><div class="line">You can add an Integer because an Integer is allowed in any of above lists.  </div><div class="line">You can add an instance of a subclass of Integer because an instance of a subclass of Integer is allowed in any of the above lists.  </div><div class="line">You can&apos;t add a Double because foo3 could be pointing at a ArrayList&lt;Integer&gt;.  </div><div class="line">You can&apos;t add a Number because foo3 could be pointing at a ArrayList&lt;Integer&gt;.  </div><div class="line">You can&apos;t add a Object because foo3 could be pointing at a ArrayList&lt;Integer&gt;.</div></pre></td></tr></table></figure></p>
+<p>foo3你是不能读的，读出报如下类似错误Type mismatch: cannot convert from capture#2-of ? super Integer to Integer
+因为foo3中的元素有可能是Integer，Number或者是Object的，所以编译器不知道读出的是什么类型，所以不允许你读出元素。</p>
+<p><strong>总的来说，你要读就用? extends T，你要写就就用 ? super T,你既要读，又要写，你就不用泛型直接定义List list，这样就好了，如果没还没有看明白，直接看stackoverflow上的这篇文章，解释的很好
+http://stackoverflow.com/questions/4343202/difference-between-super-t-and-extends-t-in-java
+这一篇的将泛型擦除的，也可以看一下
+http://blog.csdn.NET/caihaijiang/article/details/6403349</strong></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;很多朋友对Java的泛型不是很理解，很多文章写的已不是很清楚，这篇博客对java泛型进行 一个总结。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;泛型的转换：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;figure class=&quot;highlight 
+    
+    </summary>
+    
+      <category term="j2SE" scheme="http://yoursite.com/categories/j2SE/"/>
+    
+    
+      <category term="泛型" scheme="http://yoursite.com/tags/%E6%B3%9B%E5%9E%8B/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Redis 教程</title>
     <link href="http://yoursite.com/2017/06/01/Redis-%E6%95%99%E7%A8%8B/"/>
     <id>http://yoursite.com/2017/06/01/Redis-教程/</id>
     <published>2017-06-01T01:31:59.000Z</published>
-    <updated>2017-06-01T03:04:47.235Z</updated>
+    <updated>2017-06-11T07:07:38.000Z</updated>
     
     <content type="html"><![CDATA[<h2>Redis 与其他 key - value 缓存产品有以下三个特点：</h2>
 <ul>
@@ -121,7 +610,36 @@ zset的成员是唯一的,但分数(score)却可以重复。</p>
     
     
       <category term="Redis" scheme="http://yoursite.com/tags/Redis/"/>
->>>>>>> 382eb92e1e8d0ee6820320bbf9eb11225629ddd8
+    
+  </entry>
+  
+  <entry>
+    <title>SpringMVC深入解析</title>
+    <link href="http://yoursite.com/2017/05/28/SpringMVC%E6%B7%B1%E5%85%A5%E8%A7%A3%E6%9E%90/"/>
+    <id>http://yoursite.com/2017/05/28/SpringMVC深入解析/</id>
+    <published>2017-05-28T07:53:43.000Z</published>
+    <updated>2017-06-11T07:12:25.000Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>本文试着从源码的角度去解析springMVC框架</p>
+</blockquote>
+<h2>springMVC controller</h2>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;本文试着从源码的角度去解析springMVC框架&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;springMVC controller&lt;/h2&gt;
+
+    
+    </summary>
+    
+      <category term="笔记" scheme="http://yoursite.com/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="springMVC" scheme="http://yoursite.com/tags/springMVC/"/>
     
   </entry>
   
@@ -130,11 +648,7 @@ zset的成员是唯一的,但分数(score)却可以重复。</p>
     <link href="http://yoursite.com/2017/05/25/SpingMvc%E5%AD%A6%E4%B9%A0%E6%9D%82%E8%AE%B0/"/>
     <id>http://yoursite.com/2017/05/25/SpingMvc学习杂记/</id>
     <published>2017-05-25T09:17:08.000Z</published>
-<<<<<<< HEAD
     <updated>2017-05-28T07:48:10.000Z</updated>
-=======
-    <updated>2017-05-27T09:14:37.457Z</updated>
->>>>>>> 382eb92e1e8d0ee6820320bbf9eb11225629ddd8
     
     <content type="html"><![CDATA[<blockquote>
 <p>本文主要记录一些比较的零散的东西</p>
@@ -357,7 +871,7 @@ true即可：&lt;/p&gt;
     <link href="http://yoursite.com/2017/05/20/markdown-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/"/>
     <id>http://yoursite.com/2017/05/20/markdown-基本语法/</id>
     <published>2017-05-20T07:00:45.000Z</published>
-    <updated>2017-05-20T07:53:00.000Z</updated>
+    <updated>2017-07-22T06:32:40.000Z</updated>
     
     <content type="html"><![CDATA[<p><strong>1、分段</strong> 	两个回车<br>
 <strong>2、换行</strong> 	两个空格 + 回车<br>
@@ -395,7 +909,7 @@ true即可：&lt;/p&gt;
     <link href="http://yoursite.com/2017/05/20/vim-%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
     <id>http://yoursite.com/2017/05/20/vim-常用快捷键/</id>
     <published>2017-05-20T06:17:13.000Z</published>
-    <updated>2017-05-20T06:57:50.000Z</updated>
+    <updated>2017-07-22T07:53:22.000Z</updated>
     
     <content type="html"><![CDATA[<h2>移动</h2>
 <ul>
